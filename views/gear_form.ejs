@@ -1,0 +1,13 @@
+<table>
+  <tr><th>項目</th><th>データ</th></tr>
+  <tr><td>ギア名</td><td><input type="text" name="name" value="<%= data.name %>" required></td></tr>
+  <tr><td>部位</td><td><select name="part">
+    <% for( let p of parts ) { %><option <%= p==data.part ? 'selected' : '' %>><%= p %></option><% } %>
+  </select></td></tr>
+  <tr><td>ブランド</td><td><select name="brand">
+    <% for( let b of brands ) { %><option <%= b==data.brand ? 'selected' : '' %>><%= b %></option><% } %>
+  </select></td></tr>
+  <tr><td>ギアの効果（メインギアパワー）</td><td><select name="main">
+    <% for( let a of abilities ) { %><option <%= a==data.main ? 'selected' : '' %>><%= a %></option><% } %>
+  </select></td></tr>
+</table>

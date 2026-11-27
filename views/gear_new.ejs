@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ギアの新規登録</title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2>ギアの新規登録</h2>
+  <form action="/gear" method="POST">
+    <%- include('gear_form', { data: {} }) %>
+    <input type="submit" value="登録">
+  </form>
+  <a href="/gear">ギア一覧に戻る</a>
+</body>
+</html>

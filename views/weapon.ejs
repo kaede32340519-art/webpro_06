@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ブキ一覧</title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2>ブキ一覧</h2>
+  <p>
+    並べ替え：
+    <a href="/weapon" class="<%= sort=='' ? 'now' : '' %>">ID順</a> |
+    <a href="/weapon?sort=type" class="<%= sort=='type' ? 'now' : '' %>">武器種</a> |
+    <a href="/weapon?sort=sub" class="<%= sort=='sub' ? 'now' : '' %>">サブ</a> |
+    <a href="/weapon?sort=special" class="<%= sort=='special' ? 'now' : '' %>">スペシャル</a>
+  </p>
+  <table>
+    <tr>
+      <th>ID</th><th>ブキ名</th>
+      <th><a href="/weapon?sort=type">武器種</a></th>
+      <th><a href="/weapon?sort=sub">サブ</a></th>
+      <th><a href="/weapon?sort=special">スペシャル</a></th>
+    </tr>
+    <% for( let item of list ) { %>
+      <tr>
+        <td><%= item.row.id %></td>
+        <td><a href="/weapon/<%= item.index %>"><%= item.row.name %></a></td>
+        <td><%= item.row.type %></td>
+        <td><%= item.row.sub %></td>
+        <td><%= item.row.special %></td>
+      </tr>
+    <% } %>
+  </table>
+  <p>全<%= list.length %>件</p>
+  <a href="/weapon/create">追加</a>
+</body>
+</html>

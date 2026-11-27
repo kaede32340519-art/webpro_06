@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ブキの新規登録</title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2>ブキの新規登録</h2>
+  <form action="/weapon" method="POST">
+    <%- include('weapon_form', { data: {} }) %>
+    <input type="submit" value="登録">
+  </form>
+  <a href="/weapon">ブキ一覧に戻る</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の編集</title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2><%= data.name %>の編集</h2>
+  <form action="/weapon/update/<%= id %>" method="POST">
+    <%- include('weapon_form') %>
+    <input type="submit" value="更新">
+  </form>
+  <a href="/weapon/<%= id %>">詳細に戻る</a>
+  <a href="/weapon">ブキ一覧に戻る</a>
+</body>
+</html>

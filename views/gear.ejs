@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ギア一覧</title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2>ギア一覧</h2>
+  <p>
+    並べ替え：
+    <a href="/gear" class="<%= sort=='' ? 'now' : '' %>">ID順</a> |
+    <a href="/gear?sort=brand" class="<%= sort=='brand' ? 'now' : '' %>">ブランド</a> |
+    <a href="/gear?sort=main" class="<%= sort=='main' ? 'now' : '' %>">ギアの効果</a>
+  </p>
+  <table>
+    <tr>
+      <th>ID</th><th>ギア名</th><th>部位</th>
+      <th><a href="/gear?sort=brand">ブランド</a></th>
+      <th><a href="/gear?sort=main">ギアの効果（メインギアパワー）</a></th>
+    </tr>
+    <% for( let item of list ) { %>
+      <tr>
+        <td><%= item.row.id %></td>
+        <td><a href="/gear/<%= item.index %>"><%= item.row.name %></a></td>
+        <td><%= item.row.part %></td>
+        <td><%= item.row.brand %></td>
+        <td><%= item.row.main %></td>
+      </tr>
+    <% } %>
+  </table>
+  <p>全<%= list.length %>件</p>
+  <a href="/gear/create">追加</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2><%= data.name %>の詳細</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>ギア名</td><td><%= data.name %></td></tr>
+    <tr><td>部位</td><td><%= data.part %></td></tr>
+    <tr><td>ブランド</td><td><%= data.brand %></td></tr>
+    <tr><td>ギアの効果（メインギアパワー）</td><td><%= data.main %></td></tr>
+  </table>
+  <a href="/gear/edit/<%= id %>">編集</a>
+  <a href="/gear/delete/<%= id %>" onclick="return confirm('<%= data.name %>を削除しますか？');">削除</a>
+  <a href="/gear">ギア一覧に戻る</a>
+</body>
+</html>

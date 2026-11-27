@@ -1,0 +1,13 @@
+<table>
+  <tr><th>項目</th><th>データ</th></tr>
+  <tr><td>ブキ名</td><td><input type="text" name="name" value="<%= data.name %>" required></td></tr>
+  <tr><td>武器種</td><td><select name="type">
+    <% for( let t of types ) { %><option <%= t==data.type ? 'selected' : '' %>><%= t %></option><% } %>
+  </select></td></tr>
+  <tr><td>サブウェポン</td><td><select name="sub">
+    <% for( let s of subs ) { %><option <%= s==data.sub ? 'selected' : '' %>><%= s %></option><% } %>
+  </select></td></tr>
+  <tr><td>スペシャルウェポン</td><td><select name="special">
+    <% for( let s of specials ) { %><option <%= s==data.special ? 'selected' : '' %>><%= s %></option><% } %>
+  </select></td></tr>
+</table>

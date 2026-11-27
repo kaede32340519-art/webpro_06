@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ステージ一覧</title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2>ステージ一覧</h2>
+  <table>
+    <tr><th>ID</th><th>ステージ名</th><th>初登場作品</th><th>追加時期</th></tr>
+    <% for( let item of list ) { %>
+      <tr>
+        <td><%= item.row.id %></td>
+        <td><a href="/stage/<%= item.index %>"><%= item.row.name %></a></td>
+        <td><%= item.row.origin %></td>
+        <td><%= item.row.added %></td>
+      </tr>
+    <% } %>
+  </table>
+  <p>全<%= list.length %>件</p>
+  <a href="/stage/create">追加</a>
+</body>
+</html>

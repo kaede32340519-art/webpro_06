@@ -1,0 +1,9 @@
+<table>
+  <tr><th>項目</th><th>データ</th></tr>
+  <tr><td>ステージ名</td><td><input type="text" name="name" value="<%= data.name %>" required></td></tr>
+  <tr><td>初登場作品</td><td><select name="origin">
+    <% for( let o of origins ) { %><option <%= o==data.origin ? 'selected' : '' %>><%= o %></option><% } %>
+  </select></td></tr>
+  <tr><td>スプラトゥーン3への追加時期</td><td><input type="text" name="added" value="<%= data.added %>" placeholder="発売時 / シーズン2 など" required></td></tr>
+  <tr><td>特徴</td><td><input type="text" name="feature" value="<%= data.feature %>" size="40"></td></tr>
+</table>

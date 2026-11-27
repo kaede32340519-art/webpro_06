@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>スプラトゥーン3 データ参照システム</title>
+  <link rel="stylesheet" href="/public/splatoon.css">
+</head>
+<body>
+  <%- include('sp_menu') %>
+  <h2>スプラトゥーン3 データ参照システム</h2>
+  <table>
+    <tr><th>システム</th><th>内容</th><th>件数</th></tr>
+    <tr><td><a href="/weapon">ブキ参照システム</a></td><td>ブキの武器種・サブウェポン・スペシャルウェポン</td><td><%= weapon %>件</td></tr>
+    <tr><td><a href="/gear">ギア参照システム</a></td><td>ギアの部位・ブランド・メインギアパワー</td><td><%= gear %>件</td></tr>
+    <tr><td><a href="/stage">ステージ参照システム</a></td><td>バトルステージの初登場作品・追加時期・特徴</td><td><%= stage %>件</td></tr>
+  </table>
+</body>
+</html>
