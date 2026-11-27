@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>焼肉メニュー</title>
+</head>
+<body>
+  <%- include('menu') %>
+  <h2>焼肉メニュー一覧</h2>
+  <table border="1">
+    <tr><th>ID</th><th>メニュー名</th><th>部位</th><th>値段</th></tr>
+    <% for( let row of data ) { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><%= row.name %></td>
+        <td><%= row.part %></td>
+        <td><%= row.price %>円</td>
+      </tr>
+    <% } %>
+  </table>
+  <p>全<%= data.length %>品</p>
+  <p><a href="/public/yakiniku_add.html">メニューを追加する</a></p>
+</body>
+</html>

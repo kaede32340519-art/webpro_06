@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>駅を追加する</title>
+</head>
+<body>
+    <p><a href="/public/index.html">トップ</a> | <a href="/keiyo2">駅の一覧</a></p>
+    <h2>京葉線の駅を追加する</h2>
+    <form action="/keiyo_add">
+        <label for="id">ID</label>
+        <input type="number" name="id" id="id" required>
+        <label for="code">Code</label>
+        <input type="text" name="code" id="code" required>
+        <label for="name">駅名</label>
+        <input type="text" name="name" id="name" required>
+        <!-- 例1：登録後に入力画面へ戻る（/keiyo_add → リダイレクト） -->
+        <input type="submit" value="登録（入力画面に戻る）">
+        <!-- 例2：登録後に一覧を表示する（/keiyo_add2 → render） -->
+        <input type="submit" value="登録（一覧を表示）" formaction="/keiyo_add2">
+    </form>
+</body>
+</html>

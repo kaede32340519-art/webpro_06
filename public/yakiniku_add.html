@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>焼肉メニューを追加する</title>
+</head>
+<body>
+    <p><a href="/public/index.html">トップ</a> | <a href="/yakiniku">メニュー一覧</a></p>
+    <h2>焼肉メニューを追加する</h2>
+    <form action="/yakiniku_add">
+        <label for="name">メニュー名</label>
+        <input type="text" name="name" id="name" required>
+        <label for="part">部位</label>
+        <input type="text" name="part" id="part" required>
+        <label for="price">値段（円）</label>
+        <input type="number" name="price" id="price" min="0" required>
+        <input type="submit" value="登録">
+    </form>
+</body>
+</html>
